@@ -1,15 +1,15 @@
 {
-    "name": "fiveam-code/laravel-notion-api",
+    "name": "ezsolu/laravel-notion-api",
     "description": "Laravel Wrapper for the Notion API",
     "keywords": [
-        "fiveam-code",
+        "ezsolu",
         "laravel-notion-api",
         "laravel",
         "notion",
         "notion-api",
         "api-wrapper"
     ],
-    "homepage": "https://github.com/fiveam-code/laravel-notion-api",
+    "homepage": "https://github.com/ezsolu/laravel-notion-api",
     "license": "MIT",
     "type": "library",
     "authors": [
