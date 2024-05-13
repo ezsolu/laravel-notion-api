@@ -81,7 +81,7 @@ class Block extends Endpoint
      *
      * @throws HandlingException
      */
-    public function append($appendices): BlockEntity
+    public function append($appendices, $after = ""): BlockEntity
     {
         if (! is_array($appendices) && ! $appendices instanceof BlockEntity) {
             throw new HandlingException('$appendices must be an array or instance of BlockEntity');
@@ -103,6 +103,10 @@ class Block extends Endpoint
         $body = [
             'children' => $children,
         ];
+
+        if ($after) {
+            $body['after'] = $after;
+        }
 
         $response = $this->patch(
             $this->url(Endpoint::BLOCKS.'/'.$this->blockId.'/children'.''),
