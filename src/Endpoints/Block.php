@@ -146,7 +146,7 @@ class Block extends Endpoint
      *
      * @throws HandlingException
      */
-    public function delete(BlockEntity $block)
+    public function deleteBlock()
     {
 
         $response = $this->delete(
