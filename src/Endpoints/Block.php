@@ -136,4 +136,23 @@ class Block extends Endpoint
 
         return new BlockEntity($response->json());
     }
+
+     /**
+     * Delete one specific Block
+     * url: https://api.notion.com/{version}/blocks/{block_id} [delete]
+     * notion-api-docs: https://developers.notion.com/reference/delete-a-block.
+     *
+     * @return FiveamCode\LaravelNotionApi\Entities\Blocks\Block
+     *
+     * @throws HandlingException
+     */
+    public function delete(BlockEntity $block)
+    {
+
+        $response = $this->delete(
+            $this->url(Endpoint::BLOCKS.'/'.$this->blockId.'')
+        );
+
+        return $response->json();
+    }
 }

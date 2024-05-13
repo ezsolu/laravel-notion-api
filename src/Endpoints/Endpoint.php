@@ -103,6 +103,26 @@ class Endpoint
 
     /**
      * @param  string  $url
+     * @return Response
+     *
+     * @throws NotionException
+     * @throws HandlingException
+     */
+    protected function delete(string $url): Response
+    {
+        $response = $this->notion->getConnection()->delete($url);
+
+        if ($response->failed()) {
+            throw NotionException::fromResponse($response);
+        }
+
+        $this->response = $response;
+
+        return $response;
+    }
+
+    /**
+     * @param  string  $url
      * @param  array  $body
      * @return Response
      *
